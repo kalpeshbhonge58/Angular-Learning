@@ -1,4 +1,19 @@
+
+<!-- Property Binding Example -->
+
 <h1>{{ name }}</h1>
+
+<!-- Component Communication Example -->
+
 <app-login></app-login>
 <app-profile></app-profile>
 <app-logout></app-logout>
+
+<!-- Model Binding Example -->
+
+<button (click)="Callme()">Click me</button>
+
+
+ <button (click)="Counter('increment')">Increment</button>
+ <button (click)="Counter('decrement')">Decrement</button>
+ <p>Count: {{ count }}</p>

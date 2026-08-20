@@ -11,5 +11,29 @@ import { Profile } from './profile/profile';
   templateUrl: './app.html',
 })
 export class App {
+  //Property Example
   name = 'Kalpesh'
-}
+  //Function Binding Example
+  count = 0;
+  Callme() {
+    alert("Hello, This is first Angular app");
+  }
+
+  //Counter Function Binding Example
+
+  Counter(action: string) {
+    if (action === 'increment') {
+      this.count++;
+    } else if (action === 'decrement') {
+      this.count > 0 && this.count--;
+    }
+    //Function inside another Function Binding Example call here
+    this.JointComponent();
+  }
+
+  //Function inside another Function Binding Example
+  JointComponent(){
+    alert("This is joint component of Login, Profile and Logout");
+  }
+
+  }
