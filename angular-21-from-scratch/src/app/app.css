@@ -1,4 +1,4 @@
-h1{
+/* h1{
     color: purple;
     background-color: navy blue;
 }
@@ -8,4 +8,16 @@ app-login, app-profile, app-logout{
     background-color: lightgray;
     vertical-align: middle;
     color: black;
+} */
+
+
+.div1{
+    background-color: red;
+    height: 100px;
+    width: 100px;
+}
+.div2{
+    background-color: blue;
+    height: 100px;
+    width: 100px;
 }

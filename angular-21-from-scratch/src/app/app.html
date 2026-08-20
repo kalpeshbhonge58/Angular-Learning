@@ -1,19 +1,65 @@
 
 <!-- Property Binding Example -->
 
-<h1>{{ name }}</h1>
+<!-- <h1>{{ name }}</h1> -->
 
 <!-- Component Communication Example -->
 
-<app-login></app-login>
+<!-- <app-login></app-login>
 <app-profile></app-profile>
-<app-logout></app-logout>
+<app-logout></app-logout> -->
 
 <!-- Model Binding Example -->
 
-<button (click)="Callme()">Click me</button>
+<!-- <button (click)="Callme()">Click me</button>
 
 
  <button (click)="Counter('increment')">Increment</button>
  <button (click)="Counter('decrement')">Decrement</button>
- <p>Count: {{ count }}</p>
+ <p>Count: {{ count }}</p> -->
+
+
+ <h1>Event Handling</h1>
+ <!-- Input Type Event Example -->
+ <!-- <input type="text" (input)="onInput($event)" placeholder="Enter your name">
+ <p>Hello, {{ name }}!</p> -->
+
+ <!-- handleInput(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    this.name = inputElement.value;
+  } -->
+
+  <!-- Input Type Event Example of Datatype of Event
+  1. (input)="handleInput($event.type)" - This will pass the type of the event (e.g., "input") to the handleInput method. -->
+  <input type="text" (input)="handleInput($event.type)">
+
+  <!-- 2.  (change)="handleInput($event.type)" - This will pass the type of the event (e.g., "change") to the handleInput method. -->
+  <input type="text" (change)="handleInput($event.type)">
+
+  <!-- 3. (blur)="handleInput($event.type)" - This will pass the type of the event (e.g., "blur") to the handleInput method when the input field loses focus.    -->
+  <input type="text" (blur)="handleInput($event.type)">
+
+  <!-- 4.  (focus)="handleInput($event.type)" - This will pass the type of the event (e.g., "focus") to the handleInput method when the input field gains focus. -->
+  <input type="text" (focus)="handleInput($event.type)"> 
+
+<!-- 5.  (click)="handleInput($event.type)" - This will pass the type of the event (e.g., "click") to the handleInput method. -->
+
+  <button (click)="handleInput($event.type)">Click Me</button>
+
+  <!-- 6. Select Dropdown Example of Datatype of Event
+  1. (change)="handleInput($event.type)" - This will pass the type of the event (e.g., "change") to the handleInput method when the selected option changes. -->
+<select (change)="handleInput($event.type)">
+  <option value="option1" (change)="handleInput($event.type)">Flight</option>
+  <option value="option2" (change)="handleInput($event.type)">Train</option>
+  <option value="option3" (change)="handleInput($event.type)">Car</option>
+  <option value="option4" (change)="handleInput($event.type)">Bike</option>
+</select>
+  
+<!-- 7. Div Event Handling Example -->
+  <!-- This will pass the type of the event (e.g., "mouseenter") to the handleInput method when the mouse pointer enters the div element.  -->
+
+<div (mouseenter)="handleInput($event.type)" class="div1"></div>
+
+<!-- This will pass the type of the event (e.g., "mouseleave") to the handleInput method when the mouse pointer leaves the div element.    -->
+
+<div (mouseleave)="handleInput($event.type)" class="div2"></div>
