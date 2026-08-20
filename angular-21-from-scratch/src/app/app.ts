@@ -44,12 +44,41 @@ export class App {
   //   this.name = inputElement.value;
   // }
 
+  //Event Handling Example
   // handleInput(event: Event) {
   //   console.log('Input event:', event);
-    handleInput(event: string) {
-    console.log(event);
-    
+
+  //Simple String Datatype Event Example
+    // handleInput(event: string) {
+    // console.log(event);
+
     // const inputElement = event.target as HTMLInputElement;
     // this.name = inputElement.value;
+  //}
+
+  //Data Types 
+  data: any = 20
+
+  //Simple Number and String Datatype Event Example
+  updateData(val : Number,user :string) {
+    this.data = val
+    console.log(user);
+
+    console.log(this.Sum(10, 20));
+  }
+
+  //Sum Function Event Example
+  Sum(number1: number, number2: number): number {
+    return number1 + number2;
+  }
+
+// Multiple Event Types Example
+  handleEvent(event: PointerEvent | Event |MouseEvent) {
+    console.log(event);
+  }
+
+  //If need to handle specific event types, you can create separate methods for each event type. For example: 
+  handleEvent2(event: Event) {
+    console.log(event);
   }
 }
