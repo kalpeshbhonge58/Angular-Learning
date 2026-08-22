@@ -1,4 +1,4 @@
-import { Component, computed, effect, signal, WritableSignal,Signal } from '@angular/core';
+import { Component, computed, effect, signal, WritableSignal, Signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 // import { Logout } from './logout/logout';
 // import { Login } from './login/login';
@@ -165,20 +165,35 @@ export class App {
   //   }
   // }
 
-//Signal with WritableSignal and Computed Signal Example
+  //Signal with WritableSignal and Computed Signal Example
 
-  data: WritableSignal<string> = signal<string>('Kalpesh');
-  users: WritableSignal<string[]> = signal<string[]>(['Kalpesh', 'Ramesh', 'Suresh']);
-  speed: Signal<number> = computed<number>(() => 90);
+  //   data: WritableSignal<string> = signal<string>('Kalpesh');
+  //   users: WritableSignal<string[]> = signal<string[]>(['Kalpesh', 'Ramesh', 'Suresh']);
+  //   speed: Signal<number> = computed<number>(() => 90);
 
-handledata(){
-    this.data.set('Kalpesh Bhonge');
-        console.log('Data value updated:', this.data());
+  // handledata(){
+  //     this.data.set('Kalpesh Bhonge');
+  //         console.log('Data value updated:', this.data());
 
+  //   }
+  //   handleData(){
+  //     this.users.update((currentUsers) => [...currentUsers, 'Bhushan', 'Rohit']);
+
+  //     console.log('User value Added:', this.users());
+  //   }
+
+    counter: WritableSignal<number>=signal<number>(0)
+
+
+  increment() {
+    this.counter.update((currentValue) => currentValue + 1);
   }
-  handleData(){
-    this.users.update((currentUsers) => [...currentUsers, 'Bhushan', 'Rohit']);
-
-    console.log('User value Added:', this.users());
+  decrement() {
+    if (this.counter() > 0) {
+      this.counter.update((currentValue) => currentValue - 1);
+    }
+  }
+  reset() {
+    this.counter.set(0);
   }
 }

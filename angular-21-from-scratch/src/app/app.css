@@ -21,3 +21,25 @@ app-login, app-profile, app-logout{
     height: 100px;
     width: 100px;
 } */
+
+counterapp{
+    display: block;
+    margin: 10px 0;
+    background-color: lightgray;
+    vertical-align: middle;
+    color: black;
+    border: 1px solid black;
+    table-layout: fixed;
+}
+
+counter{
+    display: block;
+    margin: 10px 0;
+    background-color: lightgray;
+    vertical-align: middle;
+    color: black;
+}
+h1{
+    color: purple;
+    background-color: navy blue;
+}
