@@ -81,4 +81,14 @@ export class App {
   // handleEvent2(event: Event) {
   //   console.log(event);
   // }
+
+
+  //Property Binding Example
+  btnDisable=false
+
+  toggle() {
+    this.btnDisable=!this.btnDisable;
+  }
+    url="https://angular.io/assets/images/logos/angular/angular.svg"
+    AngularLogo="Angular Logo"
 }

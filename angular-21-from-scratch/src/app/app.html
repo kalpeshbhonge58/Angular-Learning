@@ -81,3 +81,9 @@
 <!-- <div (mouseenter)="handleEvent($event)" class="div1">
     <h1> Mouse Enter </h1>
 </div> -->
+
+<h1>Property Binding</h1>
+<button disabled="{{btnDisable}}">Click Me</button>
+<button [disabled]="btnDisable">Click Me</button>
+<button (click)="toggle()">Toggle</button>
+<img [src]="url" width="100"> 
