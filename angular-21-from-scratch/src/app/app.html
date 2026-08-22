@@ -96,7 +96,16 @@
 <h2> {{ count() }} </h2>
 <button (click)="updatecount()" > Update count </button> -->
 
-<h1>Computed Signal Example</h1>
+<!-- <h1>Computed Signal Example</h1>
 
 <h2>Area: {{ area() }}</h2>
-<button (click)="handleHeightChange()">Increase Height</button>
+<button (click)="handleHeightChange()">Increase Height</button> -->
+
+<h1>Effect Example in Angular</h1>
+<h2 [style.color]="color">{{ speed() }}</h2>
+<button (click)="increaseSpeed()">Increase Speed</button>
+
+<hr>
+<h1> Fruit Example </h1>
+<h2>{{ Fruit() }}</h2>
+<button (click)="changeFruit()">Change Fruit</button>

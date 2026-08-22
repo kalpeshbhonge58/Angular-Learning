@@ -6,7 +6,7 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   imports: [RouterOutlet],
- // imports: [RouterOutlet,Login,Profile,Logout],
+  // imports: [RouterOutlet,Login,Profile,Logout],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
@@ -49,15 +49,15 @@ export class App {
   //   console.log('Input event:', event);
 
   //Simple String Datatype Event Example
-    // handleInput(event: string) {
-    // console.log(event);
+  // handleInput(event: string) {
+  // console.log(event);
 
-    // const inputElement = event.target as HTMLInputElement;
-    // this.name = inputElement.value;
+  // const inputElement = event.target as HTMLInputElement;
+  // this.name = inputElement.value;
   //}
 
-  //Data Types 
- // data: any = 20
+  //Data Types
+  // data: any = 20
 
   //Simple Number and String Datatype Event Example
   // updateData(val : Number,user :string) {
@@ -72,16 +72,15 @@ export class App {
   //   return number1 + number2;
   // }
 
-// Multiple Event Types Example
+  // Multiple Event Types Example
   // handleEvent(event: PointerEvent | Event |MouseEvent) {
   //   console.log(event);
   // }
 
-  //If need to handle specific event types, you can create separate methods for each event type. For example: 
+  //If need to handle specific event types, you can create separate methods for each event type. For example:
   // handleEvent2(event: Event) {
   //   console.log(event);
   // }
-
 
   //Property Binding Example
   // btnDisable=false
@@ -116,16 +115,55 @@ export class App {
   // }
 
   //Computed Signal Example
-    height = signal(100);
-    width = signal(20);
-    area = computed(() => this.height() * this.width())
+  // height = signal(100);
+  // width = signal(20);
+  // area = computed(() => this.height() * this.width())
 
-    constructor() {
-      effect(() => {
-        console.log("Area value changed:", this.area());
-      });
+  // constructor() {
+  //   effect(() => {
+  //     console.log("Area value changed:", this.area());
+  //   });
+  // }
+  // handleHeightChange(){
+  //   this.height.set(this.height() + 10)
+  // }
+
+
+  //Effect Example in Angular
+  
+  speed = signal(0);
+  color = 'Black';
+
+  Fruit = signal('Mango');
+
+  constructor() {
+    effect(() => {
+      if (this.speed() > 0 && this.speed() < 80) {
+        this.color = 'Green';
+      }
+      if (this.speed() >= 90 && this.speed() < 120) {
+        this.color = 'Orange';
+      }
+      if (this.speed() >= 120) {
+        this.color = 'Red';
+      }
+      console.log('Speed value changed:', this.speed());
+    });
+
+    effect(() => {
+      console.log('Fruit value changed:', this.Fruit());
+    });
+  }
+  increaseSpeed() {
+    this.speed.set(this.speed() + 10);
+  }
+
+
+  changeFruit() {
+    if (this.Fruit() === 'Mango') {
+      this.Fruit.set('Apple');
+    } else {
+      this.Fruit.set('Mango');
     }
-    handleHeightChange(){
-      this.height.set(this.height() + 10)
-    }
+  }
 }
