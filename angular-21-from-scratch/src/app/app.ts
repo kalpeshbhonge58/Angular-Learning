@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 // import { Logout } from './logout/logout';
 // import { Login } from './login/login';
@@ -84,11 +84,48 @@ export class App {
 
 
   //Property Binding Example
-  btnDisable=false
+  // btnDisable=false
 
-  toggle() {
-    this.btnDisable=!this.btnDisable;
-  }
-    url="https://angular.io/assets/images/logos/angular/angular.svg"
-    AngularLogo="Angular Logo"
+  // toggle() {
+  //   this.btnDisable=!this.btnDisable;
+  // }
+  //   url="https://angular.io/assets/images/logos/angular/angular.svg"
+  //   AngularLogo="Angular Logo"
+
+  //Signal Example
+  // data = 10
+  // count = signal(10)
+
+  // constructor() {
+  //   effect(() => {
+  //     //console.log("data value changed:", this.data);
+  //     console.log("Count value changed:", this.count());
+
+  //     if (this.count() == 10) {
+  //       this.count.set(0)
+  //     }
+  //   });
+  // }
+
+  // updateData() {
+  //   this.data++
+  // }
+
+  // updatecount() {
+  //   this.count.set(this.count() + 1)
+  // }
+
+  //Computed Signal Example
+    height = signal(100);
+    width = signal(20);
+    area = computed(() => this.height() * this.width())
+
+    constructor() {
+      effect(() => {
+        console.log("Area value changed:", this.area());
+      });
+    }
+    handleHeightChange(){
+      this.height.set(this.height() + 10)
+    }
 }

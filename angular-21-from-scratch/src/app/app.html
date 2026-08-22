@@ -82,8 +82,21 @@
     <h1> Mouse Enter </h1>
 </div> -->
 
-<h1>Property Binding</h1>
+<!-- <h1>Property Binding</h1>
 <button disabled="{{btnDisable}}">Click Me</button>
 <button [disabled]="btnDisable">Click Me</button>
 <button (click)="toggle()">Toggle</button>
-<img [src]="url" width="100"> 
+<img [src]="url" width="100">  -->
+
+<!-- <h1>Signal Example</h1>
+
+<h2> {{ data }} </h2>
+<button (click)="updateData()" > Update data </button>
+
+<h2> {{ count() }} </h2>
+<button (click)="updatecount()" > Update count </button> -->
+
+<h1>Computed Signal Example</h1>
+
+<h2>Area: {{ area() }}</h2>
+<button (click)="handleHeightChange()">Increase Height</button>
