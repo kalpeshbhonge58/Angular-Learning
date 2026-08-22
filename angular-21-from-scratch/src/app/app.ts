@@ -57,28 +57,28 @@ export class App {
   //}
 
   //Data Types 
-  data: any = 20
+ // data: any = 20
 
   //Simple Number and String Datatype Event Example
-  updateData(val : Number,user :string) {
-    this.data = val
-    console.log(user);
+  // updateData(val : Number,user :string) {
+  //   this.data = val
+  //   console.log(user);
 
-    console.log(this.Sum(10, 20));
-  }
+  //   console.log(this.Sum(10, 20));
+  // }
 
   //Sum Function Event Example
-  Sum(number1: number, number2: number): number {
-    return number1 + number2;
-  }
+  // Sum(number1: number, number2: number): number {
+  //   return number1 + number2;
+  // }
 
 // Multiple Event Types Example
-  handleEvent(event: PointerEvent | Event |MouseEvent) {
-    console.log(event);
-  }
+  // handleEvent(event: PointerEvent | Event |MouseEvent) {
+  //   console.log(event);
+  // }
 
   //If need to handle specific event types, you can create separate methods for each event type. For example: 
-  handleEvent2(event: Event) {
-    console.log(event);
-  }
+  // handleEvent2(event: Event) {
+  //   console.log(event);
+  // }
 }
