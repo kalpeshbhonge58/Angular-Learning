@@ -1,4 +1,4 @@
-import { Component, computed, effect, signal } from '@angular/core';
+import { Component, computed, effect, signal, WritableSignal,Signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 // import { Logout } from './logout/logout';
 // import { Login } from './login/login';
@@ -128,42 +128,57 @@ export class App {
   //   this.height.set(this.height() + 10)
   // }
 
-
   //Effect Example in Angular
-  
-  speed = signal(0);
-  color = 'Black';
 
-  Fruit = signal('Mango');
+  // speed = signal(0);
+  // color = 'Black';
 
-  constructor() {
-    effect(() => {
-      if (this.speed() > 0 && this.speed() < 80) {
-        this.color = 'Green';
-      }
-      if (this.speed() >= 90 && this.speed() < 120) {
-        this.color = 'Orange';
-      }
-      if (this.speed() >= 120) {
-        this.color = 'Red';
-      }
-      console.log('Speed value changed:', this.speed());
-    });
+  // Fruit = signal('Mango');
 
-    effect(() => {
-      console.log('Fruit value changed:', this.Fruit());
-    });
+  // constructor() {
+  //   effect(() => {
+  //     if (this.speed() > 0 && this.speed() < 80) {
+  //       this.color = 'Green';
+  //     }
+  //     if (this.speed() >= 90 && this.speed() < 120) {
+  //       this.color = 'Orange';
+  //     }
+  //     if (this.speed() >= 120) {
+  //       this.color = 'Red';
+  //     }
+  //     console.log('Speed value changed:', this.speed());
+  //   });
+
+  //   effect(() => {
+  //     console.log('Fruit value changed:', this.Fruit());
+  //   });
+  // }
+  // increaseSpeed() {
+  //   this.speed.set(this.speed() + 10);
+  // }
+
+  // changeFruit() {
+  //   if (this.Fruit() === 'Mango') {
+  //     this.Fruit.set('Apple');
+  //   } else {
+  //     this.Fruit.set('Mango');
+  //   }
+  // }
+
+//Signal with WritableSignal and Computed Signal Example
+
+  data: WritableSignal<string> = signal<string>('Kalpesh');
+  users: WritableSignal<string[]> = signal<string[]>(['Kalpesh', 'Ramesh', 'Suresh']);
+  speed: Signal<number> = computed<number>(() => 90);
+
+handledata(){
+    this.data.set('Kalpesh Bhonge');
+        console.log('Data value updated:', this.data());
+
   }
-  increaseSpeed() {
-    this.speed.set(this.speed() + 10);
-  }
+  handleData(){
+    this.users.update((currentUsers) => [...currentUsers, 'Bhushan', 'Rohit']);
 
-
-  changeFruit() {
-    if (this.Fruit() === 'Mango') {
-      this.Fruit.set('Apple');
-    } else {
-      this.Fruit.set('Mango');
-    }
+    console.log('User value Added:', this.users());
   }
 }
