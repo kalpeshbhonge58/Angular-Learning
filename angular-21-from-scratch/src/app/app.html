@@ -116,7 +116,7 @@
 
 <!-- Counter Application Example -->
 
-<div class="counter-app">
+<!-- <div class="counter-app">
   <h1>Counter App</h1>
   <div>
     {{ counter() }}
@@ -126,4 +126,8 @@
     <button (click)="reset()">Reset</button>
     <button (click)="decrement()">Decrement</button>
   </div>
-</div>
+</div> -->
+
+<p>Value: {{ name() }}</p>
+<input type="text" [value]="name()" (input)="setValue($event.target.value)">
+<button (click)="resetValue()">Reset Value</button>

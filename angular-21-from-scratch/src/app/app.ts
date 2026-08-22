@@ -182,18 +182,26 @@ export class App {
   //     console.log('User value Added:', this.users());
   //   }
 
-    counter: WritableSignal<number>=signal<number>(0)
+  // counter: WritableSignal<number> = signal<number>(0);
 
+  // increment() {
+  //   this.counter.update((currentValue) => currentValue + 1);
+  // }
+  // decrement() {
+  //   if (this.counter() > 0) {
+  //     this.counter.update((currentValue) => currentValue - 1);
+  //   }
+  // }
+  // reset() {
+  //   this.counter.set(0);
+  // }
 
-  increment() {
-    this.counter.update((currentValue) => currentValue + 1);
+  name: WritableSignal<string> = signal('')
+
+  resetValue() { 
+    this.name.set('Kalpesh Bhonge');
   }
-  decrement() {
-    if (this.counter() > 0) {
-      this.counter.update((currentValue) => currentValue - 1);
-    }
-  }
-  reset() {
-    this.counter.set(0);
+  setValue(value: string) {
+    this.name.set(value);
   }
 }
