@@ -246,14 +246,14 @@ export class App {
   // name =signal('Kalpesh Bhonge')
   // age = 26
 
-  userData = signal({
-    name: 'Kalpesh Bhonge',
-    age: 26,
-    email: 'kalpesh@test.com',
-  });
+  // userData = signal({
+  //   name: 'Kalpesh Bhonge',
+  //   age: 26,
+  //   email: 'kalpesh@test.com',
+  // });
 
-  updateUserData(key: string, val: string) {
-          this.userData.update((item) => ({ ...item, [key]: val }));
+  // updateUserData(key: string, val: string) {
+  //         this.userData.update((item) => ({ ...item, [key]: val }));
     // if (key == 'name') {
     //   this.userData.update((item) => ({ ...item, name: val }));
     // }
@@ -263,5 +263,36 @@ export class App {
     // if (key == 'email') {
     //   this.userData.update((item) => ({ ...item, email: val }));
     // }
+  //}
+
+//Getter and Setter in Angular how to define and use
+  userName = signal("Kalpesh Bhonge")
+  userData = signal({
+    name: 'Kalpesh Bhonge',
+    email: "kalpesh@test.com"
+  })
+
+
+  get uName(){
+    return this.userName();
+  }
+  set uName(val:string){
+    this.userName.set(val)
+  }
+
+  getUserRecord(){
+    return this.userData().name
+  }
+  
+  setUserRecord(val:string){
+    this.userData.update((item)=>({...item,name:val}))
+  }
+
+   getUserRecords(){
+    return this.userData().email
+  }
+  
+  setUserRecords(val:string){
+    this.userData.update((item)=>({...item,email:val}))
   }
 }
