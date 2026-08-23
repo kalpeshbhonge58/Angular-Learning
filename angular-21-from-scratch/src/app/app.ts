@@ -1,8 +1,8 @@
-import { Component,signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 //import { Component, computed, effect, signal, WritableSignal, Signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { UserData } from "./user-data/user-data";
-import { AdminData } from "./admin-data/admin-data";
+import { UserData } from './user-data/user-data';
+import { AdminData } from './admin-data/admin-data';
 // import { Logout } from './logout/logout';
 // import { Login } from './login/login';
 // import { Profile } from './profile/profile';
@@ -202,26 +202,35 @@ export class App {
 
   // name: WritableSignal<string> = signal('')
 
-  // resetValue() { 
+  // resetValue() {
   //   this.name.set('Kalpesh Bhonge');
   // }
   // setValue(value: string) {
   //   this.name.set(value);
   // }
 
-  isLogin = signal(false);
-  show = signal(true)
+  //Hide Show & Login Logout & Status change logic
+  //   isLogin = signal(false);
+  //   show = signal(true)
 
-  status = signal("Not Started")
+  //   status = signal("Not Started")
 
+  // handleLogin(status:boolean){
+  // this.isLogin.set(status)
+  // }
 
-handleLogin(status:boolean){
-this.isLogin.set(status)
-}
+  // handleStatus(event : Event){
+  //   let target = event.target as HTMLSelectElement
+  // this.status.set(target.value)
+  // }
 
-handleStatus(event : Event){
-  let target = event.target as HTMLSelectElement
-this.status.set(target.value)
-}
-  
+  users = signal(['Kalpesh', 'Suresh', 'Akash', 'Prakash', 'Ramesh']);
+
+  usersDetails = signal([
+    { id: 1, name: 'Kalpesh', surname: 'Bhonge', email: 'kalpesh@gmail.com' },
+    { id: 2, name: 'Suresh', surname: 'Patil', email: 'suresh@gmail.com' },
+    { id: 3, name: 'Akash', surname: 'Jadhav', email: 'akash@gmail.com' },
+    { id: 4, name: 'Prakash', surname: 'Borase', email: 'prakash@gmail.com' },
+    { id: 5, name: 'Ramesh', surname: 'Dubey', email: 'ramesh@gmail.com' },
+  ]);
 }
