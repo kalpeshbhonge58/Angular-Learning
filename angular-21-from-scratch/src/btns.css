@@ -1,0 +1,32 @@
+.btn{
+    background-color: rgb(128, 128, 243);
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-primary{
+    background-color: rgb(96, 96, 237);
+}
+
+.btn-primary:hover{
+    background-color:  rgb(96, 96, 237);
+}
+
+.btn-warning{
+    background-color:rgb(233, 69, 69);
+}
+
+.btn-warning:hover{
+    background-color:rgb(233, 69, 69);
+}
+
+.btn-sucess{
+    background-color:rgb(74, 227, 74);
+}
+
+.btn-sucess:hover{
+    background-color: rgb(39, 133, 39);
+}

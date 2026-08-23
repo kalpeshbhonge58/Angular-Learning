@@ -1,14 +1,17 @@
 import { Component, computed, effect, signal, WritableSignal, Signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { UserData } from "./user-data/user-data";
+import { AdminData } from "./admin-data/admin-data";
 // import { Logout } from './logout/logout';
 // import { Login } from './login/login';
 // import { Profile } from './profile/profile';
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, UserData, AdminData],
   // imports: [RouterOutlet,Login,Profile,Logout],
   selector: 'app-root',
-  styleUrl: './app.css',
+  //styleUrl: './app.css',
+  styleUrls:["./app.css","./common.css"],
   templateUrl: './app.html',
 })
 export class App {
@@ -196,12 +199,12 @@ export class App {
   //   this.counter.set(0);
   // }
 
-  name: WritableSignal<string> = signal('')
+  // name: WritableSignal<string> = signal('')
 
-  resetValue() { 
-    this.name.set('Kalpesh Bhonge');
-  }
-  setValue(value: string) {
-    this.name.set(value);
-  }
+  // resetValue() { 
+  //   this.name.set('Kalpesh Bhonge');
+  // }
+  // setValue(value: string) {
+  //   this.name.set(value);
+  // }
 }
