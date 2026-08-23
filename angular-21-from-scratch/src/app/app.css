@@ -43,4 +43,14 @@ h1{
     color: purple;
     background-color: navy blue;
 } */
-
+ul{
+    margin: 0px;
+    padding: 0px;
+}
+.task-list{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}

@@ -287,8 +287,7 @@
   (input)="updateUserData('email', $event.target.value)"
 /> -->
 
-
-<h1>Getter and Setter in Angular</h1>
+<!-- <h1>Getter and Setter in Angular</h1>
 
 <h2>{{userName()}}</h2>
 <input type="text" [(ngModel)]="uName">
@@ -301,4 +300,28 @@
 <hr/>
 
 <h1>{{userData().email}}</h1>
-<input type="text" [(ngModel)]="userData().email">
+<input type="text" [(ngModel)]="userData().email"> -->
+
+<h1>TO DO List with Signals</h1>
+<hr />
+<input
+  type="text"
+  [value]="title()"
+  (input)="title.set($event.target.value)"
+  placeholder="Enter Task"
+/>
+<button (click)="addTask()">Add Task</button>
+
+<ul>
+  @for (task of tasks(); track task.id) {
+    <li class="task-list">
+      <span>{{ $index + 1 }}</span>
+      <span>{{ task.Title }}</span>
+      <span><button (click)="deleteTask(task.id)">Delete</button></span>
+    </li>
+  }
+
+  @empty {
+    <span>No Task Found</span>
+  }
+</ul>

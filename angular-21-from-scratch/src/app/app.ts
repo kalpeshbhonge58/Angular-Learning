@@ -254,45 +254,62 @@ export class App {
 
   // updateUserData(key: string, val: string) {
   //         this.userData.update((item) => ({ ...item, [key]: val }));
-    // if (key == 'name') {
-    //   this.userData.update((item) => ({ ...item, name: val }));
-    // }
-    // if (key == 'age') {
-    //   this.userData.update((item) => ({ ...item, age: parseInt(val) }));
-    // }
-    // if (key == 'email') {
-    //   this.userData.update((item) => ({ ...item, email: val }));
-    // }
+  // if (key == 'name') {
+  //   this.userData.update((item) => ({ ...item, name: val }));
+  // }
+  // if (key == 'age') {
+  //   this.userData.update((item) => ({ ...item, age: parseInt(val) }));
+  // }
+  // if (key == 'email') {
+  //   this.userData.update((item) => ({ ...item, email: val }));
+  // }
   //}
 
-//Getter and Setter in Angular how to define and use
-  userName = signal("Kalpesh Bhonge")
-  userData = signal({
-    name: 'Kalpesh Bhonge',
-    email: "kalpesh@test.com"
-  })
+  //Getter and Setter in Angular how to define and use
+  //   userName = signal("Kalpesh Bhonge")
+  //   userData = signal({
+  //     name: 'Kalpesh Bhonge',
+  //     email: "kalpesh@test.com"
+  //   })
 
+  //   get uName(){
+  //     return this.userName();
+  //   }
+  //   set uName(val:string){
+  //     this.userName.set(val)
+  //   }
 
-  get uName(){
-    return this.userName();
-  }
-  set uName(val:string){
-    this.userName.set(val)
+  //   getUserRecord(){
+  //     return this.userData().name
+  //   }
+
+  //   setUserRecord(val:string){
+  //     this.userData.update((item)=>({...item,name:val}))
+  //   }
+
+  //    getUserRecords(){
+  //     return this.userData().email
+  //   }
+
+  //   setUserRecords(val:string){
+  //     this.userData.update((item)=>({...item,email:val}))
+  //   }
+
+  tasks = signal([{ id: 0, Title: 'Lunch Time', Completed: false }]);
+
+  title = signal('');
+
+  addTask() {
+    if (this.title()) {
+      this.tasks.update((item) => [
+        ...item,
+        { id: this.tasks().length, Title: this.title(), Completed: false },
+      ]);
+      this.title.set('');
+    }
   }
 
-  getUserRecord(){
-    return this.userData().name
-  }
-  
-  setUserRecord(val:string){
-    this.userData.update((item)=>({...item,name:val}))
-  }
-
-   getUserRecords(){
-    return this.userData().email
-  }
-  
-  setUserRecords(val:string){
-    this.userData.update((item)=>({...item,email:val}))
+  deleteTask(id: number) {
+    this.tasks.update((tasks) => tasks.filter((tasks) => tasks.id != id));
   }
 }
