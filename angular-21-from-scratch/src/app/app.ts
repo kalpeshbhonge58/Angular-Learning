@@ -3,12 +3,14 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserData } from './user-data/user-data';
 import { AdminData } from './admin-data/admin-data';
+import { FormsModule } from '@angular/forms';
+import { email } from '@angular/forms/signals';
 // import { Logout } from './logout/logout';
 // import { Login } from './login/login';
 // import { Profile } from './profile/profile';
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, FormsModule],
   // imports: [RouterOutlet,Login,Profile,Logout, UserData, AdminData],
   selector: 'app-root',
   styleUrl: './app.css',
@@ -234,12 +236,32 @@ export class App {
   //   { id: 5, name: 'Ramesh', surname: 'Dubey', email: 'ramesh@gmail.com' },
   // ]);
 
-  status=signal("notStarted")
+  // status = signal('notStarted');
 
-handleSwitchStates(event : Event){
-  let target = event.target as HTMLSelectElement
- this.status.set(target.value)
+  // handleSwitchStates(event: Event) {
+  //   let target = event.target as HTMLSelectElement;
+  //   this.status.set(target.value);
+  // }
 
-}
+  // name =signal('Kalpesh Bhonge')
+  // age = 26
 
+  userData = signal({
+    name: 'Kalpesh Bhonge',
+    age: 26,
+    email: 'kalpesh@test.com',
+  });
+
+  updateUserData(key: string, val: string) {
+          this.userData.update((item) => ({ ...item, [key]: val }));
+    // if (key == 'name') {
+    //   this.userData.update((item) => ({ ...item, name: val }));
+    // }
+    // if (key == 'age') {
+    //   this.userData.update((item) => ({ ...item, age: parseInt(val) }));
+    // }
+    // if (key == 'email') {
+    //   this.userData.update((item) => ({ ...item, email: val }));
+    // }
+  }
 }
