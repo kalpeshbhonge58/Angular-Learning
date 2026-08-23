@@ -194,7 +194,7 @@
   <span style="color: red;">Canclelled</span>
 } -->
 
-<h2>For | Control Statement</h2>
+<!-- <h2>For | Control Statement</h2>
 
 <div>
   <ul>
@@ -220,4 +220,32 @@
     <span><b> Total Users</b>     {{$count}}</span>  
     }</span>
   }
-</ul>
+</ul> -->
+
+<h1>Switch Case Statements</h1>
+
+<select (change)="handleSwitchStates($event)" id="">
+  <option value="notStarted"> Not Started Yet </option>
+  <option value="inProgress"> working in Progress </option>
+  <option value="Sucess"> Sucessfull </option>
+  <option value="fail">Failed</option>
+  <option value="error">Error</option>
+</select>
+
+@switch (status()) {
+  @case ('notStarted') {
+    <span style="color: aquamarine;">No Update yet</span>
+  }
+   @case ('inProgress') {
+    <span style="color: orange;">working in Progress</span>
+  }
+   @case ('Sucess') {
+    <span style="color: green;">Sucessfull</span>
+  }
+   @case ('fail') {
+    <span style="color: red;">Failed</span>
+  }
+  @default {
+    <span style="color: darkred;">Error</span>
+  }
+}

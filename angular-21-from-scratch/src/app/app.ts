@@ -224,13 +224,22 @@ export class App {
   // this.status.set(target.value)
   // }
 
-  users = signal(['Kalpesh', 'Suresh', 'Akash', 'Prakash', 'Ramesh']);
+  // users = signal(['Kalpesh', 'Suresh', 'Akash', 'Prakash', 'Ramesh']);
 
-  usersDetails = signal([
-    { id: 1, name: 'Kalpesh', surname: 'Bhonge', email: 'kalpesh@gmail.com' },
-    { id: 2, name: 'Suresh', surname: 'Patil', email: 'suresh@gmail.com' },
-    { id: 3, name: 'Akash', surname: 'Jadhav', email: 'akash@gmail.com' },
-    { id: 4, name: 'Prakash', surname: 'Borase', email: 'prakash@gmail.com' },
-    { id: 5, name: 'Ramesh', surname: 'Dubey', email: 'ramesh@gmail.com' },
-  ]);
+  // usersDetails = signal([
+  //   { id: 1, name: 'Kalpesh', surname: 'Bhonge', email: 'kalpesh@gmail.com' },
+  //   { id: 2, name: 'Suresh', surname: 'Patil', email: 'suresh@gmail.com' },
+  //   { id: 3, name: 'Akash', surname: 'Jadhav', email: 'akash@gmail.com' },
+  //   { id: 4, name: 'Prakash', surname: 'Borase', email: 'prakash@gmail.com' },
+  //   { id: 5, name: 'Ramesh', surname: 'Dubey', email: 'ramesh@gmail.com' },
+  // ]);
+
+  status=signal("notStarted")
+
+handleSwitchStates(event : Event){
+  let target = event.target as HTMLSelectElement
+ this.status.set(target.value)
+
+}
+
 }
