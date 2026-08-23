@@ -132,7 +132,7 @@
 <input type="text" [value]="name()" (input)="setValue($event.target.value)">
 <button (click)="resetValue()">Reset Value</button> -->
 
-<h1 class="headingclass"><button class="btn btn-primary"> Login </button> Styles in Angular</h1>
+<!-- <h1 class="headingclass"><button class="btn btn-primary"> Login </button> Styles in Angular</h1>
 <app-admin-data></app-admin-data>
 <app-user-data></app-user-data>
 
@@ -141,4 +141,55 @@
   Hello Angular User
 </div>
 
-<h2 class="heading2">Hello Kalpesh</h2>
+<h2 class="heading2">Hello Kalpesh</h2> -->
+
+<!-- Simple Login Logout Functionality -->
+
+<h1>Login Logout Function</h1>
+<div>
+  @if (isLogin()) {
+    <span> Welcome, User </span>
+    <button (click)="handleLogin(false)">Logout</button>
+  } @else {
+    <span> Please Login </span>
+    <button (click)="handleLogin(true)">Login</button>
+  }
+</div>
+
+<hr />
+
+<h1>Toggle Hide and Show Fuction</h1>
+@if (show()) {
+  <button (click)="show.set(false)">Hide</button>
+} @else {
+  <button (click)="show.set(true)">Show</button>
+}
+
+
+<hr/>
+
+<h1>Check Status</h1>
+
+<select (change)="handleStatus($event)" id="">
+  <option value="Not Started">Not Started Yet</option>
+  <option value="Started">Started</option>
+  <option value="In Progress">In Progress</option>
+  <option value="Completed">Completed</option>
+  <option value="Canclelled">Canclelled</option>
+</select>
+
+@if(status() == "Not Started"){
+  <span>Not Started Yet</span>
+}
+@else if(status() == "Started"){
+  <span style="color: aqua;">Started</span>
+}
+@else if(status() == "In Progress"){
+  <span style="color: blue;">In Progress</span>
+}
+@else if(status() == "Completed"){
+  <span style="color: green;">Completed</span>
+}
+@else if(status() == "Canclelled"){
+  <span style="color: red;">Canclelled</span>
+}
