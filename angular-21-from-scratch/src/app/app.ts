@@ -318,50 +318,50 @@ export class App {
 
 // Example of ngFor Loop
 
-  students = ["Kalpesh", "Suresh", "Akash", "Prakash", "Ramesh"];
+  // students = ["Kalpesh", "Suresh", "Akash", "Prakash", "Ramesh"];
 
-  studentData=[
-    {
-      name: "Kalpesh",
-      age: 29,
-      email: "kalpesh@gmail.com"
-    },
-    {
-      name: "Suresh",
-      age: 25,
-      email: "Suresh@gmail.com"
-    },
-    {
-      name: "Akash",
-      age: 27,
-      email: "Akash@gmail.com"
-    }
-    ,{
-      name: "Prakash",
-      age: 35,
-      email: "Prakash@gmail.com"
-    }
-    ,{
-      name: "Ramesh",
-      age: 46,
-      email: "Ramesh@gmail.com"
-    }
-  ]
+  // studentData=[
+  //   {
+  //     name: "Kalpesh",
+  //     age: 29,
+  //     email: "kalpesh@gmail.com"
+  //   },
+  //   {
+  //     name: "Suresh",
+  //     age: 25,
+  //     email: "Suresh@gmail.com"
+  //   },
+  //   {
+  //     name: "Akash",
+  //     age: 27,
+  //     email: "Akash@gmail.com"
+  //   }
+  //   ,{
+  //     name: "Prakash",
+  //     age: 35,
+  //     email: "Prakash@gmail.com"
+  //   }
+  //   ,{
+  //     name: "Ramesh",
+  //     age: 46,
+  //     email: "Ramesh@gmail.com"
+  //   }
+  // ]
 
   // Example of ngIF and Else and Multiple IF and Else loop
-  login = false
+  // login = false
 
-  block=0
+  // block=0
 
-  updateBlock(){
-    this.block++;
-  }
+  // updateBlock(){
+  //   this.block++;
+  // }
 
-  // Example of ngSwitch
-  color="black"
+  // // Example of ngSwitch
+  // color="black"
 
-  changeColor(color :string){
-    this.color =color
-  }
+  // changeColor(color :string){
+  //   this.color =color
+  // }
 
 }
