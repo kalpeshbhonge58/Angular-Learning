@@ -1,16 +1,19 @@
 import { Component, signal } from '@angular/core';
 //import { Component, computed, effect, signal, WritableSignal, Signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { UserData } from './user-data/user-data';
-import { AdminData } from './admin-data/admin-data';
-import { FormsModule } from '@angular/forms';
+// import { RouterOutlet } from '@angular/router';
+// import { UserData } from './user-data/user-data';
+// import { AdminData } from './admin-data/admin-data';
+// import { FormsModule } from '@angular/forms';
+// import { email } from '@angular/forms/signals';
+//import { NgForOf } from "../../node_modules/@angular/common/types/_common_module-chunk";
+import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { email } from '@angular/forms/signals';
 // import { Logout } from './logout/logout';
 // import { Login } from './login/login';
 // import { Profile } from './profile/profile';
 
 @Component({
-  imports: [RouterOutlet, FormsModule],
+  imports: [NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault],
   // imports: [RouterOutlet,Login,Profile,Logout, UserData, AdminData],
   selector: 'app-root',
   styleUrl: './app.css',
@@ -295,21 +298,70 @@ export class App {
   //     this.userData.update((item)=>({...item,email:val}))
   //   }
 
-  tasks = signal([{ id: 0, Title: 'Lunch Time', Completed: false }]);
+  // tasks = signal([{ id: 0, Title: 'Lunch Time', Completed: false }]);
 
-  title = signal('');
+  // title = signal('');
 
-  addTask() {
-    if (this.title()) {
-      this.tasks.update((item) => [
-        ...item,
-        { id: this.tasks().length, Title: this.title(), Completed: false },
-      ]);
-      this.title.set('');
+  // addTask() {
+  //   if (this.title()) {
+  //     this.tasks.update((item) => [
+  //       ...item,
+  //       { id: this.tasks().length, Title: this.title(), Completed: false },
+  //     ]);
+  //     this.title.set('');
+  //   }
+  // }
+
+  // deleteTask(id: number) {
+  //   this.tasks.update((tasks) => tasks.filter((tasks) => tasks.id != id));
+  // }
+
+// Example of ngFor Loop
+
+  students = ["Kalpesh", "Suresh", "Akash", "Prakash", "Ramesh"];
+
+  studentData=[
+    {
+      name: "Kalpesh",
+      age: 29,
+      email: "kalpesh@gmail.com"
+    },
+    {
+      name: "Suresh",
+      age: 25,
+      email: "Suresh@gmail.com"
+    },
+    {
+      name: "Akash",
+      age: 27,
+      email: "Akash@gmail.com"
     }
+    ,{
+      name: "Prakash",
+      age: 35,
+      email: "Prakash@gmail.com"
+    }
+    ,{
+      name: "Ramesh",
+      age: 46,
+      email: "Ramesh@gmail.com"
+    }
+  ]
+
+  // Example of ngIF and Else and Multiple IF and Else loop
+  login = false
+
+  block=0
+
+  updateBlock(){
+    this.block++;
   }
 
-  deleteTask(id: number) {
-    this.tasks.update((tasks) => tasks.filter((tasks) => tasks.id != id));
+  // Example of ngSwitch
+  color="black"
+
+  changeColor(color :string){
+    this.color =color
   }
+
 }

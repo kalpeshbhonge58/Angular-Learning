@@ -302,7 +302,7 @@
 <h1>{{userData().email}}</h1>
 <input type="text" [(ngModel)]="userData().email"> -->
 
-<h1>TO DO List with Signals</h1>
+<!-- <h1>TO DO List with Signals</h1>
 <hr />
 <input
   type="text"
@@ -324,4 +324,71 @@
   @empty {
     <span>No Task Found</span>
   }
+</ul> -->
+
+<!-- Example of ngFOR Loop -->
+
+<h1>*ngFor Directives in Angular</h1>
+
+<ul>
+  <li *ngFor="let x of students">
+    {{ x }}
+  </li>
 </ul>
+
+<hr />
+
+<ul>
+  <li *ngFor="let student of studentData">
+    {{ student.name }},{{ student.age }},{{ student.email }}
+  </li>
+</ul>
+
+<!-- Example of  simple If Else ngIf Loop -->
+<h1>*ngIf Directives in Angular</h1>
+<div *ngIf="login; else elseBlock">
+  <a href="">Logout</a>
+  <hr />
+</div>
+<ng-template #elseBlock>
+  <a href="">Login</a>
+</ng-template>
+
+<hr />
+
+<!-- Multiple If Else Example -->
+<div *ngIf="block == 0">
+  <h1>Heading 0</h1>
+</div>
+<div *ngIf="block == 1">
+  <h1>Heading 1</h1>
+</div>
+<div *ngIf="block == 2">
+  <h1>Heading 2</h1>
+</div>
+
+<button (click)="updateBlock()">Update Block</button>
+
+<hr />
+<!-- Example of ngSwitch Case  -->
+
+<h1>*ngSwitch Case Directives in Angular</h1>
+
+<button (click)="changeColor('red')">Red</button>
+<button (click)="changeColor('green')">Green</button>
+<button (click)="changeColor('yellow')">Yellow</button>
+<button (click)="changeColor('purple')">Purple</button>
+<button (click)="changeColor('brown')">Brown</button>
+<button (click)="changeColor('blue')">Blue</button>
+<button (click)="changeColor('navajowhite')">Nova-Jo-White</button>
+
+<div [ngSwitch]="color">
+  <h1 *ngSwitchCase="'red'" style="background-color: red">Red Color</h1>
+  <h1 *ngSwitchCase="'green'" style="background-color: green">Green Color</h1>
+  <h1 *ngSwitchCase="'yellow'" style="background-color: yellow">Yellow Color</h1>
+  <h1 *ngSwitchCase="'purple'" style="background-color: purple">Purple Color</h1>
+  <h1 *ngSwitchCase="'brown'" style="background-color: brown">Brown Color</h1>
+  <h1 *ngSwitchCase="'blue'" style="background-color: blue">Blue Color</h1>
+  <h1 *ngSwitchCase="'navajowhite'" style="background-color: navajowhite">Nova-Jo-White Color</h1>
+  <h1 *ngSwitchDefault>No Color Match</h1>
+</div>
