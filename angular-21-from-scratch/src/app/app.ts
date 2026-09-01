@@ -1,4 +1,5 @@
 import { Component, signal } from '@angular/core';
+import { Footer } from './Footer/footer';
 //import { Component, computed, effect, signal, WritableSignal, Signal } from '@angular/core';
 // import { RouterOutlet } from '@angular/router';
 // import { UserData } from './user-data/user-data';
@@ -6,15 +7,15 @@ import { Component, signal } from '@angular/core';
 // import { FormsModule } from '@angular/forms';
 // import { email } from '@angular/forms/signals';
 //import { NgForOf } from "../../node_modules/@angular/common/types/_common_module-chunk";
-import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
-import { email } from '@angular/forms/signals';
+//import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+//import { email } from '@angular/forms/signals';
 // import { Logout } from './logout/logout';
 // import { Login } from './login/login';
 // import { Profile } from './profile/profile';
 
 @Component({
-  imports: [NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault],
-  // imports: [RouterOutlet,Login,Profile,Logout, UserData, AdminData],
+  imports: [Footer],
+  // imports: [RouterOutlet,Login,Profile,Logout, UserData, AdminData,NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault],
   selector: 'app-root',
   styleUrl: './app.css',
   //styleUrls:["./app.css","./common.css"],
