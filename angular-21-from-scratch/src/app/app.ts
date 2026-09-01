@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { SearchBox } from './search-box/search-box';
+import { Child } from './child/child';
+//import { SearchBox } from './search-box/search-box';
 //import { Footer } from './Footer/footer';
 //import { Component, computed, effect, signal, WritableSignal, Signal } from '@angular/core';
 // import { RouterOutlet } from '@angular/router';
@@ -15,15 +16,24 @@ import { SearchBox } from './search-box/search-box';
 // import { Profile } from './profile/profile';
 
 @Component({
-  imports: [SearchBox],
-  // imports: [Footer,RouterOutlet,Login,Profile,Logout, UserData, AdminData,NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault],
+  imports: [Child],
+  // imports: [SearchBox,Footer,RouterOutlet,Login,Profile,Logout, UserData, AdminData,NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault],
   selector: 'app-root',
   styleUrl: './app.css',
   //styleUrls:["./app.css","./common.css"],
   templateUrl: './app.html',
 })
 export class App {
-    numbers=signal([1, 2, 3, 4, 5]);
+  //userName = signal('Kalpesh Bhonge');
+  users = signal(['Kalpesh Bhonge', 'Suresh Patil', 'Akash Jadhav', 'Prakash Borase', 'Ramesh Dubey']);
+  newUserName = signal('');
+  AddNewUser() {
+    if (this.newUserName() !== '') {
+      this.users.update((currentUsers) => [...currentUsers, this.newUserName()]);
+      this.newUserName.set('');
+    }
+  }
+    //numbers=signal([1, 2, 3, 4, 5]);
   //Property Example
   //name = 'Kalpesh'
   //Function Binding Example
