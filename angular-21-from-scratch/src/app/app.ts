@@ -1,5 +1,7 @@
-import { Component, signal } from '@angular/core';
-import { Child } from './child/child';
+import { Component, Signal } from '@angular/core';
+import { DisplayCount } from './display-count/display-count';
+import { ControlCount } from './control-count/control-count';
+//import { Child } from './child/child';
 //import { SearchBox } from './search-box/search-box';
 //import { Footer } from './Footer/footer';
 //import { Component, computed, effect, signal, WritableSignal, Signal } from '@angular/core';
@@ -16,8 +18,8 @@ import { Child } from './child/child';
 // import { Profile } from './profile/profile';
 
 @Component({
-  imports: [Child],
-  // imports: [SearchBox,Footer,RouterOutlet,Login,Profile,Logout, UserData, AdminData,NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault],
+  imports: [DisplayCount, ControlCount],
+  // imports: [Child,SearchBox,Footer,RouterOutlet,Login,Profile,Logout, UserData, AdminData,NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault],
   selector: 'app-root',
   styleUrl: './app.css',
   //styleUrls:["./app.css","./common.css"],
@@ -25,27 +27,27 @@ import { Child } from './child/child';
 })
 export class App {
   //userName = signal('Kalpesh Bhonge');
-  users = signal(['Kalpesh Bhonge', 'Suresh Patil', 'Akash Jadhav', 'Prakash Borase', 'Ramesh Dubey']);
-  newUserName = signal('');
-  selectedUserName = signal('');
+  // users = signal(['Kalpesh Bhonge', 'Suresh Patil', 'Akash Jadhav', 'Prakash Borase', 'Ramesh Dubey']);
+  // newUserName = signal('');
+  // selectedUserName = signal('');
 
-  selectUser(name: string) {
-    console.log('Selected User Name : ', name);
-    this.selectedUserName.set(name);
-  }
+  // selectUser(name: string) {
+  //   console.log('Selected User Name : ', name);
+  //   this.selectedUserName.set(name);
+  // }
 
-  deleteUser(name: string) {
-    console.log('Deleted User Name : ', name);
-    this.users.update((currentUsers) => currentUsers.filter((user) => user !== name));
-  }
+  // deleteUser(name: string) {
+  //   console.log('Deleted User Name : ', name);
+  //   this.users.update((currentUsers) => currentUsers.filter((user) => user !== name));
+  // }
 
 
-  AddNewUser() {
-    if (this.newUserName() !== '') {
-      this.users.update((currentUsers) => [...currentUsers, this.newUserName()]);
-      this.newUserName.set('');
-    }
-  }
+  // AddNewUser() {
+  //   if (this.newUserName() !== '') {
+  //     this.users.update((currentUsers) => [...currentUsers, this.newUserName()]);
+  //     this.newUserName.set('');
+  //   }
+  // }
     //numbers=signal([1, 2, 3, 4, 5]);
   //Property Example
   //name = 'Kalpesh'

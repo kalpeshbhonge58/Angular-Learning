@@ -401,7 +401,7 @@
 <!-- <app-child [userName]="userName()"></app-child> -->
 <!-- <input type="text" [value]="newUserName()" (input)="newUserName.set($event.target.value)" placeholder="Enter new user name">
 <button (click)="users.set([...users(), newUserName()])">Add New User</button>  -->
-<h2>Selected UserName : {{ selectedUserName() }}</h2>
+<!-- <h2>Selected UserName : {{ selectedUserName() }}</h2>
 
 <hr/>
 
@@ -413,6 +413,13 @@
   (selectUser)="selectUser(($event))"
   (deleteUser)="deleteUser(($event))"
   >
-    <!-- <button (click)="selectUser(user)">Select User</button> -->
+    <button (click)="selectUser(user)">Select User</button> 
   </app-child>
-}
+} -->
+
+<h1>Global Store With Signal</h1>
+
+<app-display-count></app-display-count>
+
+<hr/>
+<app-control-count></app-control-count>
