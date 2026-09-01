@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { Footer } from './Footer/footer';
+import { SearchBox } from './search-box/search-box';
+//import { Footer } from './Footer/footer';
 //import { Component, computed, effect, signal, WritableSignal, Signal } from '@angular/core';
 // import { RouterOutlet } from '@angular/router';
 // import { UserData } from './user-data/user-data';
@@ -14,14 +15,15 @@ import { Footer } from './Footer/footer';
 // import { Profile } from './profile/profile';
 
 @Component({
-  imports: [Footer],
-  // imports: [RouterOutlet,Login,Profile,Logout, UserData, AdminData,NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault],
+  imports: [SearchBox],
+  // imports: [Footer,RouterOutlet,Login,Profile,Logout, UserData, AdminData,NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault],
   selector: 'app-root',
   styleUrl: './app.css',
   //styleUrls:["./app.css","./common.css"],
   templateUrl: './app.html',
 })
 export class App {
+    numbers=signal([1, 2, 3, 4, 5]);
   //Property Example
   //name = 'Kalpesh'
   //Function Binding Example
