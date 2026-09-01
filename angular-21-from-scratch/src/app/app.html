@@ -417,9 +417,32 @@
   </app-child>
 } -->
 
-<h1>Global Store With Signal</h1>
+<!-- <h1>Global Store With Signal</h1>
 
 <app-display-count></app-display-count>
 
 <hr/>
-<app-control-count></app-control-count>
+<app-control-count></app-control-count> -->
+
+
+<h1>{{ title() | uppercase }}</h1>
+<h1>{{ title() | titlecase }}</h1>
+
+<h1>{{ name() | titlecase }} </h1>
+
+<input type="text" (input)="name.set($event.target.value)">
+
+<hr/>
+
+<h2>I Bought {{mobile | titlecase}} Mobile on {{date | date}} for {{amount | currency}}</h2>
+<hr/>
+
+<h1>Today is {{today | date:'fullDate'}}</h1>
+<h1>Today is {{today | date:'short'}}</h1>
+<h1>Today is {{today | date:'mm'}}</h1>
+<h1>Today is {{today | date:'dd'}}</h1>
+<h1>Today is {{today | date:'yy'}}</h1>
+<h1>Today is {{today | date}}</h1>
+
+<hr/>
+<h1>{{userdata()|json}}</h1>

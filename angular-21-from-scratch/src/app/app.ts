@@ -1,6 +1,8 @@
-import { Component, Signal } from '@angular/core';
-import { DisplayCount } from './display-count/display-count';
-import { ControlCount } from './control-count/control-count';
+import { CommonModule } from '@angular/common';
+import { Component,signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+//import { DisplayCount } from './display-count/display-count';
+//import { ControlCount } from './control-count/control-count';
 //import { Child } from './child/child';
 //import { SearchBox } from './search-box/search-box';
 //import { Footer } from './Footer/footer';
@@ -18,14 +20,28 @@ import { ControlCount } from './control-count/control-count';
 // import { Profile } from './profile/profile';
 
 @Component({
-  imports: [DisplayCount, ControlCount],
-  // imports: [Child,SearchBox,Footer,RouterOutlet,Login,Profile,Logout, UserData, AdminData,NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault],
+  imports: [CommonModule, FormsModule],
+  // imports: [DisplayCount, ControlCount,Child,SearchBox,Footer,RouterOutlet,Login,Profile,Logout, UserData, AdminData,NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault],
   selector: 'app-root',
   styleUrl: './app.css',
   //styleUrls:["./app.css","./common.css"],
   templateUrl: './app.html',
 })
 export class App {
+  title = signal('angular 21 from scratch');
+  name = signal("");
+
+  amount=2500;
+  date="01-09-2026";
+  mobile="motorola"
+
+  today=new Date();
+
+  userdata = signal({
+    name: 'Kalpesh Bhonge',
+    age : 26,
+    email: 'kalpesh.bhonge@example.com'
+  });
   //userName = signal('Kalpesh Bhonge');
   // users = signal(['Kalpesh Bhonge', 'Suresh Patil', 'Akash Jadhav', 'Prakash Borase', 'Ramesh Dubey']);
   // newUserName = signal('');
