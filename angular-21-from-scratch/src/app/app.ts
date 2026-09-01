@@ -27,6 +27,19 @@ export class App {
   //userName = signal('Kalpesh Bhonge');
   users = signal(['Kalpesh Bhonge', 'Suresh Patil', 'Akash Jadhav', 'Prakash Borase', 'Ramesh Dubey']);
   newUserName = signal('');
+  selectedUserName = signal('');
+
+  selectUser(name: string) {
+    console.log('Selected User Name : ', name);
+    this.selectedUserName.set(name);
+  }
+
+  deleteUser(name: string) {
+    console.log('Deleted User Name : ', name);
+    this.users.update((currentUsers) => currentUsers.filter((user) => user !== name));
+  }
+
+
   AddNewUser() {
     if (this.newUserName() !== '') {
       this.users.update((currentUsers) => [...currentUsers, this.newUserName()]);
